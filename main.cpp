@@ -13,7 +13,7 @@
 float roundedNumber(float n);
 
 int main(int argc, const char *argv[]){
-	std::ifstream myReadFile(agrv[1]);
+	std::ifstream myReadFile(argv[1]);
 	std::string line = "";
 	Vector2 coords;
 	Figure figures;
