@@ -31,7 +31,6 @@ class Figure : public Shape {
         //Holds all points
         Vector2 figureVectors;
         Shape **shapeArray;
-        Shape **arrangedShapeArr;
         int shapeAmount;
         Vertices* boundingArray;
         Vertices* tempVector;

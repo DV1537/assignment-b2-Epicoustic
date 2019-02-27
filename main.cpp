@@ -1,3 +1,4 @@
+#include "vld.h"
 #include "vector2.h"
 #include "shape.h"
 #include "line.h"
@@ -53,6 +54,7 @@ int main(int argc, const char *argv[]){
 	}
 	figures.printClosest();
 	myReadFile.close();
+	std::cin.get();
 }
 
 float roundedNumber(float n){

@@ -21,17 +21,22 @@ Figure::~Figure(){
          }
          delete[] shapeArray;
     }
-    if(boundingArray){
-        delete [] boundingArray;
-    }
+	if(boundingArray) {
+		delete[] boundingArray;
+	}
+	//if(tempArr){
+	//	delete[] tempArr;
+	//}
 }
 
 void Figure::printClosest(){
+    int n = 3;
     Shape* firstShape = shapeArray[0];
-    arrangedShapeArr = getClosest(firstShape,shapeAmount);
+    Shape **arrangedShapeArr;
+    arrangedShapeArr = getClosest(firstShape,n);
 
-	//Prints between 0-3 shapes
-	int n = shapeAmount;
+	// //Prints between 0-3 shapes
+	n = shapeAmount;
 	if (shapeAmount >= 4) {
 		n = 4;
 	}
@@ -43,12 +48,17 @@ void Figure::printClosest(){
 		}
 		std::cout << "\n";
 	}
+	if (arrangedShapeArr)
+		delete[] arrangedShapeArr;
 }
 
-
 Shape** Figure::getClosest(Shape *location, int n){
-    bubbleSort(location,n);   
-    return shapeArray;
+	Shape **tempArr = new Shape*[n+1];
+    bubbleSort(location,shapeAmount); 
+    for(int i = 1; i < n+1; i++){
+        tempArr[i] = shapeArray[i];
+    } 
+    return tempArr;
 }
 
 // Bubblesorting shapearray based on distance from first shape
