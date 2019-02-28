@@ -1,4 +1,3 @@
-#include "vld.h"
 #include "vector2.h"
 #include "shape.h"
 #include "line.h"
